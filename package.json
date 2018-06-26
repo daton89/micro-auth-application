@@ -1,7 +1,6 @@
 {
   "name": "micro-auth-application",
-  "description":
-    "ExpressJS boilerplate for Authentication application with Bootstrap Mailgun Mongodb and React. Inspired by hackaton-starter.",
+  "description": "ExpressJS boilerplate for Authentication application with Bootstrap Mailgun Mongodb and React. Inspired by hackaton-starter.",
   "version": "1.0.0",
   "repository": {
     "type": "git",
@@ -25,12 +24,13 @@
     "url": "https://github.com/daton89/micro-auth-application"
   },
   "scripts": {
-    "start":
-      "nodemon --exec \"npm run fix && npm run lint && npm run dev\" --ignore client",
+    "start": "nodemon --exec \"npm run fix && npm run lint && npm run dev\" --ignore client",
     "lint": "eslint server",
     "dev": "babel-node server --presets es2015,stage-2",
     "fix": "eslint --fix server",
-    "test": "ava"
+    "test": "ava",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "engines": {
     "node": "^8.2.1",
@@ -73,7 +73,8 @@
     "request-promise": "^4.2.2",
     "serve-favicon": "^2.5.0",
     "swig": "^1.4.2",
-    "verror": "^1.10.0"
+    "verror": "^1.10.0",
+    "snyk": "^1.85.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -87,5 +88,6 @@
     "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-standard": "^3.0.1",
     "nodemon": "^1.17.3"
-  }
+  },
+  "snyk": true
 }
